@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Telos密钥对生成工具</title>
+</head>
+<body>
+    <div class="container-fluid text-center">
+        <!-- <img src="./telos_cantons_logo.png" alt="Telos Cantons" class="m-5"> -->
+        <h1 class="m-5 display-4">Telos Cantons</h1>
+        <div class="">
+            <!-- generate key -->
+            <div class="text-center">
+                <p>
+                    这个工具不需要任务网络请求，为了保证生成密钥对的时候相对安全:
+                    <ol class="text-left d-inline-block">
+                        <li>打开页面后，先断开网络</li>
+                        <li>点击 [随机生成密钥对]</li>
+                        <li class="font-weight-bold">确保用安全的方式保存密钥，比如：用纸抄一份</li>
+                        <li>关闭网站</li>
+                    </ol>
+                </p>
+                <button class="btn btn-primary my-3" id="generate-key-btn">随机生成密钥对(使用eosjs-ecc)</button>
+                <p class="text-danger font-weight-bold">!!!请注意保管好自己的私钥!!!</p>
+            </div>
+            <div class="result">
+                <p id="public-key" class="d-none">公钥: </p>
+                <p id="private-key" class="d-none">私钥: </p>
+            </div>
+        </div>
+        <hr class="my-5"/>
+        <div class="w-50 m-auto">
+            <!-- valid key -->
+            <div class="input-group">
+                <input id="valid-public-key" type="text" class="form-control" placeholder="输入你的公钥">
+                <button id="valid-public-key-btn" class="ml-3 btn btn-primary">验证公钥</button>
+            </div>
+            <p id="valid-public-key-result"></p>
+            <div class="input-group mt-3">
+                <input id="valid-private-key" type="text" class="form-control" placeholder="输入你的私钥">
+                <button id="valid-private-key-btn" class="ml-3 btn btn-primary">验证私钥</button>
+            </div>
+            <p id="valid-private-key-result"></p>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
